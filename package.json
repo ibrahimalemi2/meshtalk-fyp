@@ -1,0 +1,21 @@
+{
+  "name": "workspace",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "preinstall": "node preinstall.js",
+    "build": "pnpm run typecheck && pnpm -r --if-present run build",
+    "typecheck:libs": "tsc --build",
+    "typecheck": "pnpm run typecheck:libs && pnpm -r --filter \"./artifacts/**\" --filter \"./scripts\" --if-present run typecheck",
+    "dev": "pnpm --filter @workspace/mobile run dev",
+    "dev:mobile": "pnpm --filter @workspace/mobile run dev",
+    "dev:web": "pnpm --filter @workspace/mesh-web run dev",
+    "dev:sandbox": "pnpm --filter @workspace/mockup-sandbox run dev",
+    "dev:api": "pnpm --filter @workspace/api-server run dev"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "typescript": "~5.9.2"
+  }
+}

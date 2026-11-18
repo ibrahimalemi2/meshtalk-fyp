@@ -1,0 +1,26 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "strict": true,
+    "paths": {
+      "@/constants/*": ["./constants/*"],
+      "@/context/*": ["./context/*"],
+      "@/components/*": ["./components/*"],
+      "@/modules": ["./src/modules/index.ts"],
+      "@/modules/*": ["./src/modules/*"],
+      "@/*": ["./"]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "references": [
+    {
+      "path": "../../lib/api-client-react"
+    }
+  ]
+}
